@@ -1,6 +1,4 @@
-require "external_link_to/version"
+# frozen_string_literal: true
 
-module ExternalLinkTo
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require 'external_link_to/version'
+require 'external_link_to/external_link_to'

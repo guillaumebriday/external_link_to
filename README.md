@@ -1,8 +1,13 @@
-# ExternalLinkTo
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/guillaumebriday)
+![](https://github.com/guillaumebriday/external_link_to/workflows/Lint/badge.svg)
+[![](https://img.shields.io/gem/dt/external_link_to.svg)](https://rubygems.org/gems/external_link_to)
+[![](https://img.shields.io/gem/v/external_link_to.svg)](https://rubygems.org/gems/external_link_to)
+[![](https://img.shields.io/github/license/guillaumebriday/external_link_to.svg)](https://github.com/guillaumebriday/external_link_to)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/external_link_to`. To experiment with that code, run `bin/console` for an interactive prompt.
+# external_link_to
 
-TODO: Delete this and the text above, and describe your gem
+This gem provides a wrapper around the built in `ActionView::Helpers::UrlHelper#link_to` method available in Rails.
+It creates a link tag with `target="_blank"` and `rel="noopener noreferrer"` attributes by default. Simple as that.
 
 ## Installation
 
@@ -13,31 +18,35 @@ gem 'external_link_to'
 ```
 
 And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install external_link_to
+```bash
+$ bundle
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+For instance, this link: 
+```ruby
+link_to 'Home', root_path, rel: 'noopener noreferrer', target: '_blank'
+# => <a rel="noopener noreferrer" target="_blank" href="/">Profile</a>Home
+```
 
-## Development
+is exactly the same as:
+```ruby
+external_link_to 'Home', root_path
+# => <a rel="noopener noreferrer" target="_blank" href="/">Profile</a>Home
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Basicaly, if you want to open a link in a new tab, just replace `link_to` with `external_link_to`:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```diff
+- link_to 'Home', root_path
++ external_link_to 'Home', root_path
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/external_link_to. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Do not hesitate to contribute to the project by adapting or adding features ! Bug reports or pull requests are welcome.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the ExternalLinkTo project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/external_link_to/blob/master/CODE_OF_CONDUCT.md).

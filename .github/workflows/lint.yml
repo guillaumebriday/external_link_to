@@ -1,0 +1,16 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+      - run: |
+          gem install bundler --no-document
+          bundle install -j $(nproc) --quiet
+          bundle exec rubocop
