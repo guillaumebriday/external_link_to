@@ -1,5 +1,6 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/guillaumebriday)
 ![](https://github.com/guillaumebriday/external_link_to/workflows/Lint/badge.svg)
+![](https://github.com/guillaumebriday/external_link_to/workflows/Test/badge.svg)
 [![](https://img.shields.io/gem/dt/external_link_to.svg)](https://rubygems.org/gems/external_link_to)
 [![](https://img.shields.io/gem/v/external_link_to.svg)](https://rubygems.org/gems/external_link_to)
 [![](https://img.shields.io/github/license/guillaumebriday/external_link_to.svg)](https://github.com/guillaumebriday/external_link_to)
@@ -24,7 +25,7 @@ $ bundle
 
 ## Usage
 
-For instance, this link: 
+For instance, this link:
 ```ruby
 link_to 'Home', root_path, rel: 'noopener noreferrer', target: '_blank'
 # => <a rel="noopener noreferrer" target="_blank" href="/">Profile</a>Home

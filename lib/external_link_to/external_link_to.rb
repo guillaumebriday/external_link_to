@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+require 'action_view'
+
 module ExternalLinkTo # rubocop:disable Style/Documentation
+  include ActionView::Helpers::UrlHelper
+
   def external_link_to(*args, &block)
     name = block_given? ? capture(&block) : args.shift
     options = args.shift || {}
