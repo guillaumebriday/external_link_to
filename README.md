@@ -28,13 +28,13 @@ $ bundle
 For instance, this link:
 ```ruby
 link_to 'Home', root_path, rel: 'noopener noreferrer', target: '_blank'
-# => <a rel="noopener noreferrer" target="_blank" href="/">Profile</a>Home
+# => <a rel="noopener noreferrer" target="_blank" href="/">Home</a>Home
 ```
 
 is exactly the same as:
 ```ruby
 external_link_to 'Home', root_path
-# => <a rel="noopener noreferrer" target="_blank" href="/">Profile</a>Home
+# => <a rel="noopener noreferrer" target="_blank" href="/">Home</a>Home
 ```
 
 Basicaly, if you want to open a link in a new tab, just replace `link_to` with `external_link_to`:
